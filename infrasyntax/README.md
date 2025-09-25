@@ -1,4 +1,4 @@
-# InfraSyntax: A Production-Grade NLP Search Engine ⚙️
+# InfraSyntax: A Production-Grade NLP Search Engine 
 
 InfraSyntax is a fully containerized, production-ready semantic search engine. It allows developers to find relevant configuration snippets by searching with natural language goals (e.g., "set up a secure SSL redirect") instead of guessing exact keywords.
 
@@ -6,7 +6,7 @@ This implementation has been upgraded with production-level features, including 
 
 ---
 
-## 🏛️ System Architecture
+## System Architecture
 
 The project follows a standard data pipeline architecture, ensuring a clear separation of concerns.
 
@@ -41,7 +41,7 @@ The project follows a standard data pipeline architecture, ensuring a clear sepa
 
 ---
 
-## ✨ Production-Ready Features
+## Production-Ready Features
 
 * **Centralized Configuration:** All settings are managed in a `.env` file, validated by Pydantic in the backend for robustness.
 * **Structured Logging:** All modules write to a central log file (`infrasyntax.log`) with clear, filterable log levels (`INFO`, `WARNING`, `ERROR`).
@@ -52,7 +52,7 @@ The project follows a standard data pipeline architecture, ensuring a clear sepa
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### 1. Initial Setup
 
@@ -101,8 +101,8 @@ Bash
 
 docker-compose up --build -d backend frontend
 4. Access the Services
-✅ Frontend UI: http://localhost:3000
+Frontend UI: http://localhost:3000
 
-✅ Backend API Docs: http://localhost:8000/docs
+Backend API Docs: http://localhost:8000/docs
 
-✅ Logs: Check the infrasyntax.log file in the root directory.
+Logs: Check the infrasyntax.log file in the root directory.

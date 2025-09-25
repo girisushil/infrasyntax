@@ -104,5 +104,3 @@ docker-compose up --build -d backend frontend
 Frontend UI: http://localhost:3000
 
 Backend API Docs: http://localhost:8000/docs
-
-Logs: Check the infrasyntax.log file in the root directory.

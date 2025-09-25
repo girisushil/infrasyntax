@@ -1,0 +1,3 @@
+/* Same as before, just for completeness */
+:root { --primary-color: #007bff; --bg-color: #f8f9fa; --font-color: #212529; --card-bg: #ffffff; --border-color: #dee2e6; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background-color: var(--bg-color); color: var(--font-color); margin: 0; padding: 20px; }

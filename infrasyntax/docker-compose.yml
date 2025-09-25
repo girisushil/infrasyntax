@@ -1,0 +1,55 @@
+version: '3.8'
+
+services:
+elasticsearch:
+image: docker.elastic.co/elasticsearch/elasticsearch:8.9.0
+container_name: elasticsearch
+environment:
+- discovery.type=single-node
+- xpack.security.enabled=false
+- "ES_JAVA_OPTS=-Xms1g -Xmx1g"
+ports:
+- "9200:9200"
+volumes:
+- es_data:/usr/share/elasticsearch/data
+networks:
+- infrasyntax_net
+
+backend:
+build:
+context: ./backend
+container_name: backend
+env_file: ./.env # Load environment variables from .env file
+ports:
+- "8000:8000"
+volumes:
+- ./backend/app:/app
+depends_on:
+- elasticsearch
+networks:
+- infrasyntax_net
+# For production, you'd switch to a Gunicorn command
+# command: ["gunicorn", "-k", "uvicorn.workers.UvicornWorker", "-w", "4", "-b", "0.0.0.0:8000", "main:app"]
+command: ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]
+
+frontend:
+build:
+context: ./frontend
+container_name: frontend
+env_file: ./.env # Load .env to get REACT_APP_API_URL
+ports:
+- "3000:3000"
+volumes:
+- ./frontend/src:/app/src
+depends_on:
+- backend
+networks:
+- infrasyntax_net
+
+networks:
+infrasyntax_net:
+driver: bridge
+
+volumes:
+es_data:
+driver: local

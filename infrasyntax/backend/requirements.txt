@@ -1,0 +1,8 @@
+fastapi==0.104.1
+uvicorn[standard]==0.24.0
+gunicorn==21.2.0
+elasticsearch==8.9.0
+sentence-transformers==2.7.0
+torch==2.1.0
+python-dotenv==1.0.0
+pydantic-settings==2.1.0

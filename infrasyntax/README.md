@@ -1,4 +1,4 @@
-# InfraSyntax: A Production-Grade NLP Search Engine 
+# InfraSyntax: Intelligent NLP Search Engine for Configuration Files
 
 InfraSyntax is a fully containerized, production-ready semantic search engine. It allows developers to find relevant configuration snippets by searching with natural language goals (e.g., "set up a secure SSL redirect") instead of guessing exact keywords.
 

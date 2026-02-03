@@ -1,0 +1,240 @@
+:root {
+  --primary: #2563eb;
+  --bg: #f8fafc;
+  --card-bg: #ffffff;
+  --text: #1e293b;
+  --border: #e2e8f0;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.app-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+h1 {
+  font-size: 3rem;
+  margin: 0;
+  background: linear-gradient(45deg, #2563eb, #7c3aed);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.search-section form {
+  display: flex;
+  gap: 10px;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  background: white;
+  border-radius: 12px;
+}
+
+input {
+  flex: 1;
+  padding: 15px;
+  font-size: 1.1rem;
+  border: none;
+  outline: none;
+}
+
+button {
+  padding: 0 30px;
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: opacity 0.2s;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+button:disabled {
+  background-color: #94a3b8;
+}
+
+.error-message {
+  color: #dc2626;
+  background: #fee2e2;
+  padding: 10px;
+  border-radius: 8px;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.result-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  margin-top: 30px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+/* --- UPDATED HEADER CSS FOR WRAPPING --- */
+.result-header {
+  padding: 20px;
+  border-bottom: 1px solid var(--border);
+  background: #f1f5f9;
+
+  /* Flexbox to separate title from button */
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.header-left {
+  flex: 1;
+  min-width: 0; /* Allows shrinking/wrapping */
+}
+
+h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  line-height: 1.5;
+
+  /* Force text wrapping */
+  white-space: normal;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+/* -------------------------------------- */
+
+.badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 10px;
+}
+
+.badge.nginx {
+  background: #dcfce7;
+  color: #166534;
+}
+.badge.docker {
+  background: #dbeafe;
+  color: #1e40af;
+}
+.badge.terraform {
+  background: #f3e8ff;
+  color: #6b21a8;
+}
+.badge.kubernetes {
+  background: #e0e7ff;
+  color: #3730a3;
+}
+
+.result-footer {
+  padding: 12px 20px;
+  background: #f8fafc;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  color: #64748b;
+}
+
+.copy-btn {
+  background: transparent;
+  color: var(--primary);
+  padding: 5px 10px;
+  font-size: 0.8rem;
+}
+
+.copy-btn:hover {
+  background: #eff6ff;
+}
+
+.audit-btn {
+  /* No margin-left: auto needed because of flex space-between */
+  background-color: #fff;
+  border: 1px solid #e2e8f0;
+  color: #475569;
+  padding: 6px 12px;
+  font-size: 0.85rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.audit-btn:hover {
+  background-color: #f1f5f9;
+  border-color: #cbd5e1;
+}
+
+.audit-result {
+  margin: 0;
+  padding: 15px 20px;
+  border-bottom: 1px solid #e2e8f0;
+  font-size: 0.9rem;
+}
+
+.audit-result.safe {
+  background-color: #ecfdf5;
+  color: #065f46;
+}
+
+.audit-result.risk {
+  background-color: #fff1f2;
+  color: #9f1239;
+}
+
+.audit-score {
+  font-size: 1rem;
+  margin-bottom: 8px;
+}
+
+.vuln-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.vuln-list li {
+  margin-bottom: 4px;
+  font-weight: 500;
+}
+
+.safe-msg {
+  font-weight: 600;
+}
+
+.dependency-card {
+  border-left: 4px solid #8b5cf6;
+  background-color: #f5f3ff;
+  margin-left: 20px;
+}
+
+.dependency-tag {
+  font-size: 0.8rem;
+  color: #6d28d9;
+  font-weight: bold;
+  margin-top: 5px;
+}
